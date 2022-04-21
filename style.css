@@ -1,0 +1,689 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+
+}
+
+/*COMPONENTS*/
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: black 3px solid;
+    text-align: center;
+    background-color: #fff;
+    position: relative;
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    border-top: 10px #FFE380 solid;
+    border-right: 10px #FFE380 solid;
+
+    transition: 0.5s ease-in-out;
+}
+
+button:hover::after {
+    border-top: 10px #000 solid;
+    border-right: 10px #000 solid;
+}
+
+/*buttons*/
+.btns>button {
+    margin: 0 40px 0 0;
+}
+
+.btns>button a {
+    font-size: 1.5rem;
+}
+
+/* __________TOP___________ */
+/*Header*/
+
+header {
+    margin: 100px auto;
+    width: 80%;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+/*Nav/Burger*/
+.burger {
+    font-size: 50px;
+}
+
+.sidebar {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFE380;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateX(+100%);
+    z-index: 10;
+
+}
+
+.fa-times {
+    font-size: 50px;
+
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+}
+
+.nav {
+    font-size: 50px;
+    font-weight: 500;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.nav>a {
+    margin: 15px 0;
+    position: relative;
+}
+
+.nav>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 40%;
+
+    height: 5px;
+    width: 100%;
+    background: #09111c;
+
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in;
+}
+
+.nav>a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+.top_header {
+    background: url(img/lanternes.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    width: 100%;
+    height: 80vh;
+}
+
+.top_text {
+    width: 40%;
+    height: 100%;
+    color: #09111c;
+    background-color: #FFE380;
+    padding: 20vh 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.top_text>h1 {
+    margin-top: 30px;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #09111c;
+}
+
+.top_text>* {
+    padding: 1rem;
+}
+
+.top_text>p {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+
+/*__________ABOUT__________*/
+.about {
+    margin: 100px auto;
+    width: 80%;
+}
+
+.about h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FFE380;
+}
+
+.about_inner {
+    display: flex;
+}
+
+.about_inner>img {
+    width: 50%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.about_text {
+    width: 50%;
+    border-left: #FFE380 1rem solid;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about_text>* {
+    margin-left: 2rem;
+    padding: 1rem;
+}
+
+.about_text>button {
+    margin-top: 2rem;
+    align-self: flex-end;
+}
+
+.about_text h2 {
+    font-size: 3rem;
+}
+
+.about_text>p {
+    font-size: 1.2rem;
+    width: 90%;
+    line-height: 150%;
+    font-weight: 400;
+}
+
+/*_______Plats de Sem______*/
+.plats_semaine {
+    width: 100%;
+    margin: 140px 0 120px;
+    background-color: #FFE380;
+    /*background: linear-gradient(180deg, rgba(234, 234, 234, 0.53) 0%, rgba(242, 238, 238, 0) 100%);*/
+
+}
+
+.plats_semaine_inner {
+    padding: 20px 0;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 300;
+}
+
+.plats_semaine_inner>h2 {
+    position: absolute;
+    top: -50px;
+}
+
+/*Plats_cards*/
+.plats_cards {
+    display: flex;
+    margin: 100px 0 0;
+}
+
+/*____Card Plat______*/
+.plat {
+    width: 33%;
+    margin: 0 40px 0;
+
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+
+    transform: rotate(20deg);
+    transition: all 0.3s ease-in;
+
+}
+
+.plat>img {
+    width: 100%;
+}
+
+/*.plat:hover{
+    transform: rotate(-20deg);
+}*/
+.plat_description {
+    padding: 2rem;
+    transform: rotate(-20deg);
+    transition: all 0.3s ease-in;
+}
+
+/*.plat_description:hover{
+    transform: rotate(20deg);
+}*/
+.plat_description>.top {
+    margin: 20px 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plat_description>p {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.plat_description h3 {
+    font-size: 1.5rem;
+}
+
+.tag {
+    font-weight: 600;
+    background-color: #FFE380;
+}
+
+/*_______Menu_______*/
+.menu {
+    margin: 100px auto;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.menu h2 {
+    font-family: 'Parisienne', cursive;
+    font-size: 72px;
+    color: #FFE380;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.menu_inner {
+    display: flex;
+}
+
+.left_menu_inner {
+    width: 45%;
+    margin-right: 10%;
+}
+
+.right_menu_inner {
+    width: 45%;
+}
+
+/*Card menu*/
+.card_menu {
+    margin-bottom: 40px;
+}
+
+.categorie {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 40px;
+}
+
+.categorie h3 {
+    font-size: 36px;
+    font-weight: 200;
+    border-bottom: #FFE380 10px solid;
+}
+
+.categorie>img {
+    width: 30%;
+}
+
+.plat_item_inner {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.details_plat {
+    width: 80%;
+}
+
+.details_plat h4 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.details_plat p {
+    font-size: 18px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.hr {
+    width: 100%;
+    border: #FFE380 2px dashed;
+    margin-bottom: 40px;
+}
+
+.menu>button {
+    align-self: flex-end;
+}
+
+/*_____Livraison____*/
+
+.livraison {
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+
+    width: 50%;
+    margin: 100px auto;
+    padding: 40px 0;
+}
+
+.livraison h2 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.livraison_inner {
+    display: flex;
+    justify-content: center;
+}
+
+.livraison a {}
+
+.livraison>img {
+    width: 40%;
+}
+
+/*Newsletter*/
+.newsletter {
+    width: 80%;
+    margin: 100px auto;
+
+    background-color: #fff;
+    border: 10px solid #FFE380;
+    border-radius: 20px;
+    padding: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter_left {
+    width: 60%;
+    margin-right: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.newsletter_right {
+    width: 40%;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.newsletter_inner p {
+    font-size: 1rem;
+}
+
+/*INPUT*/
+input {
+    height: 50px;
+    margin-right: 25px;
+
+}
+
+input::placeholder {
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+input:focus {
+    outline-color: #FFE380;
+    outline-width: 0.5px;
+}
+
+.newsletter_right>button {
+    background-color: #FFE380;
+}
+
+.newsletter_right>button:hover {
+    border: 2px #000 solid;
+}
+
+/*____FOOTER_____*/
+
+footer {
+    background-image: url("img/bf-footer.png");
+    background-size: cover;
+}
+
+.footer_inner {
+    margin: 100px auto 0;
+    height: 100%;
+    width: 80%;
+    padding: 100px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_right{
+    height: 100%;
+    border-radius: 1rem;
+}
+.footer_right p{
+    font-size: 1.1rem;
+}
+.footer_right>*{
+    margin: 2rem 0 0;
+}
+.footer_nav>a {
+    color: #000;
+    margin-right: 40px;
+    font-weight: 400;
+}
+.rs {
+    display: flex;
+}
+
+.rs i {
+    margin-left: 20px;
+    font-size: 2.2rem;
+    color: #000;
+}
+
+/* Mode responsive */
+/* Tablette */
+@media all and (max-width: 991px) {
+    .portfolio_bloc {
+        width: 50%;
+    }
+}
+
+/* Mobile */
+@media all and (max-width: 767px) {
+
+    /* ____HEADER______ */
+    header {
+        width: 95%;
+        margin: 1.2rem 0 0;
+    }
+
+    .header {
+        width: 90%;
+    }
+
+    .btns>button {
+        margin: .5rem;
+    }
+
+    .btns>button a {
+        font-size: 1.2rem;
+    }
+
+    .top_header {
+        background-size: cover;
+        background-repeat: repeat;
+    }
+
+    .top_text {
+        width: 100%;
+        height: 40%;
+    }
+
+    .top_text h1 {
+        font-size: 3rem;
+        margin-top: 10px;
+    }
+
+    /*About*/
+    .about {
+        margin: 50px auto;
+        width: 90%;
+    }
+
+    .about_inner {
+        display: block;
+    }
+
+    .about_inner>img {
+        width: 100%;
+    }
+
+    .about_text {
+        width: 100%;
+    }
+
+    /*Plats de sem*/
+    .plats_cards {
+        display: block;
+    }
+
+    .plat {
+        width: 80%;
+        background: none;
+
+        transform: none;
+    }
+
+    .plats_semaine_inner {
+        padding: 0;
+        width: 100%;
+    }
+
+    .plat_description {
+        padding: 0;
+        transform: none;
+    }
+
+    /*MEnu*/
+    .menu {
+        margin: 0 auto;
+        width: 90%;
+    }
+
+    .menu_inner {
+        display: block;
+    }
+
+    .left_menu_inner {
+        width: 100%;
+    }
+
+    .right_menu_inner {
+        width: 100%;
+    }
+
+    /*Livraidon*/
+    .livraison {
+        width: 90%;
+    }
+
+    .livraison_inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .livraison_inner>img {
+        margin-bottom: 20px;
+    }
+
+    /*NL*/
+
+    .newsletter {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .newsletter_left {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .newsletter_left h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+    }
+
+    /*Footer*/
+
+
+    .footer_nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_nav a {
+        margin: 15px 0;
+    }
+
+    .footer_inner {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rs {
+        margin: 15px 0 0;
+    }
+}
